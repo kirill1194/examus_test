@@ -1,0 +1,6 @@
+Django==2.0.1
+djangorestframework==3.7.7
+-e git+https://github.com/kirill1194/django_mini_utils.git@9e63fd2ef757d661d72a5dc1f196f26aafe9e3e7#egg=mini_utils
+Pillow==5.0.0
+pytz==2017.3
+djangorestframework==3.7.7
