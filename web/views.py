@@ -1,10 +1,8 @@
 from builtins import sum
 
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render
 from django.urls.base import reverse_lazy
 from django.views.generic.base import View, TemplateResponseMixin
-from django.views.generic.edit import CreateView, FormView
 from django.views.generic.list import ListView
 
 from core.models import MenuItem
@@ -14,10 +12,6 @@ class IndexView(ListView):
     template_name = 'web/index.html'
     queryset = MenuItem.objects.all()
 
-
-class Test(FormView):
-    def form_valid(self, form):
-        super().get_success_url()
 
 class OrderView(View, TemplateResponseMixin):
     template_name = 'web/order.html'
@@ -35,4 +29,3 @@ class OrderView(View, TemplateResponseMixin):
             return self.render_to_response(context=context)
         except Exception:
             return HttpResponseRedirect(self.error_url)
-
